@@ -4,7 +4,6 @@ import { Tab, Tabs, Typography, Step, StepLabel, Stepper } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import HoverObserver from "react-hover-observer";
 
 import { experienceData, coursesData } from "@/lib/data";
 
@@ -13,6 +12,7 @@ const AboutSection = () => {
   const controls = useAnimation();
   const reversedExperienceData = [...experienceData].reverse();
   const reversedCoursesData = [...coursesData].reverse();
+  const [isHovering, setIsHovering] = React.useState(false);
 
   const handleChange = (event: any, newValue: React.SetStateAction<number>) => {
     setTabValue(newValue);
@@ -30,53 +30,52 @@ const AboutSection = () => {
       id="about"
       className="bg-[#e8e8e8] py-16 md:py-20"
     >
-      <HoverObserver>
-        {({ isHovering }: { isHovering: boolean }) => (
-          <div className="text-center mb-6">
-            <Typography
-              variant="h4"
-              className={`font-bold ${
-                isHovering ? "text-white" : "text-primary"
-              }`}
-              style={{
-                position: "relative",
-                display: "inline-block",
-                padding: "0 10px",
-              }}
-            >
-              <span
-                className="before-dot"
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "-8px",
-                  width: "8px",
-                  height: "8px",
-                  backgroundColor: isHovering ? "#2196f3" : "#fff",
-                  borderRadius: "50%",
-                  transform: "translateY(-50%)",
-                  transition: "all 0.3s ease",
-                }}
-              />
-              About
-              <span
-                className="after-dot"
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  right: "-8px",
-                  width: "8px",
-                  height: "8px",
-                  backgroundColor: isHovering ? "#2196f3" : "#fff",
-                  borderRadius: "50%",
-                  transform: "translateY(-50%)",
-                  transition: "all 0.3s ease",
-                }}
-              />
-            </Typography>
-          </div>
-        )}
-      </HoverObserver>
+      <div
+        className="text-center mb-6"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <Typography
+          variant="h4"
+          className={`font-bold ${isHovering ? "text-white" : "text-primary"}`}
+          style={{
+            position: "relative",
+            display: "inline-block",
+            padding: "0 10px",
+          }}
+        >
+          <span
+            className="before-dot"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "-8px",
+              width: "8px",
+              height: "8px",
+              backgroundColor: isHovering ? "#2196f3" : "#fff",
+              borderRadius: "50%",
+              transform: "translateY(-50%)",
+              transition: "all 0.3s ease",
+            }}
+          />
+          About
+          <span
+            className="after-dot"
+            style={{
+              position: "absolute",
+              top: "50%",
+              right: "-8px",
+              width: "8px",
+              height: "8px",
+              backgroundColor: isHovering ? "#2196f3" : "#fff",
+              borderRadius: "50%",
+              transform: "translateY(-50%)",
+              transition: "all 0.3s ease",
+            }}
+          />
+        </Typography>
+      </div>
+
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-7 px-3">
         <div className="basis-full md:basis-1/2 ">
           <Image

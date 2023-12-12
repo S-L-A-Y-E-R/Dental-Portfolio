@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import HoverObserver from "react-hover-observer";
 import { Typography } from "@mui/material";
+import React from "react";
 
 import SideText from "./side-text";
 import { ContactForm } from "./form";
@@ -28,55 +28,56 @@ const formVariants = {
 };
 
 export default function ContactSection() {
+  const [isHovering, setIsHovering] = React.useState(false);
+
   return (
     <section className="bg-[#e8e8e8] py-16 md:py-20" id="contact">
-      <HoverObserver>
-        {({ isHovering }: { isHovering: boolean }) => (
-          <div className="text-center mb-6">
-            <Typography
-              variant="h4"
-              className={`font-bold ${
-                isHovering ? "text-white" : "text-primary"
-              }`}
-              style={{
-                position: "relative",
-                display: "inline-block",
-                padding: "0 10px",
-              }}
-            >
-              <span
-                className="before-dot"
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "-8px",
-                  width: "8px",
-                  height: "8px",
-                  backgroundColor: isHovering ? "#2196f3" : "#fff",
-                  borderRadius: "50%",
-                  transform: "translateY(-50%)",
-                  transition: "all 0.3s ease",
-                }}
-              />
-              Contact Me
-              <span
-                className="after-dot"
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  right: "-8px",
-                  width: "8px",
-                  height: "8px",
-                  backgroundColor: isHovering ? "#2196f3" : "#fff",
-                  borderRadius: "50%",
-                  transform: "translateY(-50%)",
-                  transition: "all 0.3s ease",
-                }}
-              />
-            </Typography>
-          </div>
-        )}
-      </HoverObserver>
+      <div
+        className="text-center mb-6"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <Typography
+          variant="h4"
+          className={`font-bold ${isHovering ? "text-white" : "text-primary"}`}
+          style={{
+            position: "relative",
+            display: "inline-block",
+            padding: "0 10px",
+          }}
+        >
+          <span
+            className="before-dot"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "-8px",
+              width: "8px",
+              height: "8px",
+              backgroundColor: isHovering ? "#2196f3" : "#fff",
+              borderRadius: "50%",
+              transform: "translateY(-50%)",
+              transition: "all 0.3s ease",
+            }}
+          />
+          Contact Me
+          <span
+            className="after-dot"
+            style={{
+              position: "absolute",
+              top: "50%",
+              right: "-8px",
+              width: "8px",
+              height: "8px",
+              backgroundColor: isHovering ? "#2196f3" : "#fff",
+              borderRadius: "50%",
+              transform: "translateY(-50%)",
+              transition: "all 0.3s ease",
+            }}
+          />
+        </Typography>
+      </div>
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
