@@ -62,7 +62,7 @@ const ImageGallery = ({ images }: { images: ImageType[] }) => {
                 alt={image.caption}
                 width={image.width}
                 height={image.height}
-                className="w-full h-full object-cover object-center aspect-square"
+                className="w-full h-full object-cover object-center"
               />
             </DialogContent>
           </BootstrapDialog>
