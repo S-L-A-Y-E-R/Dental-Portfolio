@@ -12,12 +12,6 @@ export const experienceData = [
     class: '',
   },
   {
-    date: '25 Aug 2023 - 28 Aug 2023',
-    role: 'Practice online endodontic program',
-    clinic: 'Hossam aboud',
-    class: '',
-  },
-  {
     date: 'Nov 2022 - oct 2023 ',
     role: 'Dental operator',
     clinic: 'Senany dental clinics ',
@@ -53,6 +47,10 @@ export const coursesData = [
   {
     date: 'Sep 2022 - Aug 2025',
     course: 'ORE course',
+  },
+  {
+    date: '25 Aug 2023 - 28 Aug 2023',
+    course: 'Practice online endodontic program',
   },
   {
     date: 'Jun 2022 - Jun 2022',
