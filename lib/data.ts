@@ -76,6 +76,18 @@ export const coursesData = [
   },
 ];
 
+export const skillsData = [
+  {
+    title: 'C1 proficiency level in English',
+  },
+  { title: '7.0 overall score band ( academic ILETS)' },
+  { title: 'Good clinic and patient management skills' },
+  {
+    title:
+      'Expert in providing dental care for elderly patients and those medically compromised and those receiving cancer treatments like chemotherapy, radiotherapy, and hormonal therapy',
+  },
+];
+
 export const endoImages = [
   {
     src: '/endo/1.png',
@@ -433,7 +445,7 @@ export const endoImages = [
 
 export const estheticImages = [
   {
-    src: '/esthetics/1.png',
+    src: '/esthetics/19.JPG',
     alt: 'esthetic1',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -441,7 +453,7 @@ export const estheticImages = [
     height: 500,
   },
   {
-    src: '/esthetics/2.jpg',
+    src: '/esthetics/22.JPG',
     alt: 'esthetic2',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -449,7 +461,7 @@ export const estheticImages = [
     height: 500,
   },
   {
-    src: '/esthetics/3.png',
+    src: '/esthetics/18.JPG',
     alt: 'esthetic3',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -457,7 +469,7 @@ export const estheticImages = [
     height: 500,
   },
   {
-    src: '/esthetics/5.png',
+    src: '/esthetics/15.PNG',
     alt: 'esthetic4',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -537,7 +549,7 @@ export const estheticImages = [
     height: 500,
   },
   {
-    src: '/esthetics/15.PNG',
+    src: '/esthetics/5.png',
     alt: 'esthetic7',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -561,7 +573,7 @@ export const estheticImages = [
     height: 500,
   },
   {
-    src: '/esthetics/18.JPG',
+    src: '/esthetics/3.PNG',
     alt: 'esthetic7',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -569,7 +581,7 @@ export const estheticImages = [
     height: 500,
   },
   {
-    src: '/esthetics/19.JPG',
+    src: '/esthetics/1.png',
     alt: 'esthetic7',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -593,7 +605,7 @@ export const estheticImages = [
     height: 500,
   },
   {
-    src: '/esthetics/22.JPG',
+    src: '/esthetics/2.jpg',
     alt: 'esthetic7',
     caption: '',
     tags: [{ title: 'Esthetics', value: 'esthetic' }],
@@ -653,6 +665,30 @@ export const fixedImages = [
   },
   {
     src: '/fixed/5.png',
+    alt: 'fixed5',
+    caption: '',
+    tags: [{ title: 'Fixed', value: 'fixed' }],
+    width: 500,
+    height: 500,
+  },
+  {
+    src: '/fixed/5.png',
+    alt: 'fixed5',
+    caption: '',
+    tags: [{ title: 'Fixed', value: 'fixed' }],
+    width: 500,
+    height: 500,
+  },
+  {
+    src: '/fixed/6.JPG',
+    alt: 'fixed5',
+    caption: '',
+    tags: [{ title: 'Fixed', value: 'fixed' }],
+    width: 500,
+    height: 500,
+  },
+  {
+    src: '/fixed/7.JPG',
     alt: 'fixed5',
     caption: '',
     tags: [{ title: 'Fixed', value: 'fixed' }],

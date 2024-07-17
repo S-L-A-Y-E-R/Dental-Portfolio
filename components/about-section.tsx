@@ -5,13 +5,14 @@ import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 
-import { experienceData, coursesData } from '@/lib/data';
+import { experienceData, coursesData, skillsData } from '@/lib/data';
 
 const AboutSection = () => {
   const [tabValue, setTabValue] = React.useState(0);
   const controls = useAnimation();
   const reversedExperienceData = [...experienceData].reverse();
   const reversedCoursesData = [...coursesData].reverse();
+  const reversedSkillsData = [...skillsData].reverse();
   const [isHovering, setIsHovering] = React.useState(false);
 
   const handleChange = (event: any, newValue: React.SetStateAction<number>) => {
@@ -96,6 +97,7 @@ const AboutSection = () => {
           >
             <Tab label='Experience' />
             <Tab label='Courses' />
+            <Tab label='Skills' />
           </Tabs>
 
           <div className='mt-6'>
@@ -123,10 +125,7 @@ const AboutSection = () => {
 
             {tabValue === 1 && (
               <div>
-                <Stepper
-                  orientation='vertical'
-                  activeStep={coursesData.length - 1}
-                >
+                <Stepper orientation='vertical' activeStep={coursesData.length}>
                   {reversedCoursesData.map((item, index) => (
                     <Step key={index}>
                       <StepLabel>
@@ -136,6 +135,23 @@ const AboutSection = () => {
                         <Typography className='opacity-70'>
                           {item.course}
                         </Typography>
+                      </StepLabel>
+                    </Step>
+                  ))}
+                </Stepper>
+              </div>
+            )}
+
+            {tabValue === 2 && (
+              <div>
+                <Stepper orientation='vertical' activeStep={skillsData.length}>
+                  {reversedSkillsData.map((item, index) => (
+                    <Step key={index}>
+                      <StepLabel>
+                        <Typography variant='h6'>{item.title}</Typography>
+                        {/* <Typography className='opacity-70'>
+                          {item.course}
+                        </Typography> */}
                       </StepLabel>
                     </Step>
                   ))}
